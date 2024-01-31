@@ -11,8 +11,6 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 
 dotenv.config();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 connectDB();
 
 const PORT = process.env.PORT || 5000;
@@ -22,7 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors());
-app.use(express.static(path.resolve(__dirname, "dist")));
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
