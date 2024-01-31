@@ -3,4 +3,4 @@ COPY package.json .
 COPY package-lock.json .
 RUN npm install
 COPY . .
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
